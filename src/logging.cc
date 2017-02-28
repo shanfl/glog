@@ -973,7 +973,7 @@ void LogFileObject::Write(bool force_flush,
   }
 
   if (static_cast<int>(file_length_ >> 20) >= MaxLogSize() ||
-      PidHasChanged()) {
+      PidHasChanged() || DayHasChanged()) {
     if (file_ != NULL) fclose(file_);
     file_ = NULL;
     file_length_ = bytes_since_flush_ = 0;
@@ -1115,7 +1115,7 @@ void LogFileObject::Write(bool force_flush,
        (bytes_since_flush_ >= 1000000) ||
        (CycleClock_Now() >= next_flush_time_) ) {
     FlushUnlocked();
-#ifdef OS_LINUX
+#ifdef OS_LINUX && !defined(ANDROID)
     if (FLAGS_drop_log_memory) {
       if (file_length_ >= logging::kPageSize) {
         // don't evict the most recent page

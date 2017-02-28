@@ -1,0 +1,4 @@
+Log file created at: 2017/02/28 21:18:20
+Running on machine: DESKTOP-N16KN5L
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0228 21:18:20.785962 15664 testmain.cpp:29] This is a <Warn> log message...
