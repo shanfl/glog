@@ -67,7 +67,7 @@
 #include <elf.h>
 #endif
 
-#if !defined(ANDROID)
+#if !defined(__ANDROID__)
 #include <link.h>  // For ElfW() macro.
 #endif
 

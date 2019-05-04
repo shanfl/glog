@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
   
 include $(CLEAR_VARS)  
   
-LOCAL_MODULE := glog_static  
+LOCAL_MODULE := glog_static 
   
 LOCAL_MODULE_FILENAME := libglog  
   
@@ -21,8 +21,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH) \
 	$(LOCAL_PATH)/src
 	
 	
-LOCAL_C_INCLUDES += system/core/include/cutils
-LOCAL_SHARED_LIBRARIES := libcutil
+#LOCAL_C_INCLUDES += system/core/include/cutils
+#LOCAL_SHARED_LIBRARIES := libcutil
 
 LOCAL_LIBS := \
 	-lpthread
